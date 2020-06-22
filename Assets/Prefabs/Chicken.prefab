@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6111029937763819265}
+  - component: {fileID: 1693617005735690594}
   - component: {fileID: 6111029937763819294}
-  - component: {fileID: 6111029937763819267}
-  - component: {fileID: 6111029937763819264}
   - component: {fileID: 555700403}
+  - component: {fileID: 7553517658345727698}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -35,6 +35,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1693617005735690594
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111029937763819295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0e998b17dc03f56449734d8eed441150, type: 3}
+  m_Controller: {fileID: 9100000, guid: 6b03b4232ef9249429c144a86a50028a, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &6111029937763819294
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -44,33 +63,35 @@ NavMeshAgent:
   m_GameObject: {fileID: 6111029937763819295}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.46
+  m_Radius: 0.42
   m_Speed: 3.5
-  m_Acceleration: 2000
+  m_Acceleration: 50
   avoidancePriority: 50
-  m_AngularSpeed: 2000
+  m_AngularSpeed: 10000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.04
-  m_BaseOffset: 0
+  m_BaseOffset: -0.09
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!65 &6111029937763819267
-BoxCollider:
+  m_ObstacleAvoidanceType: 1
+--- !u!114 &555700403
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6111029937763819295}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.85, y: 1, z: 0.55}
-  m_Center: {x: 0, y: 0.52, z: 0}
---- !u!54 &6111029937763819264
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59391bc54efedb47b4aeb62dfaecff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRandomTargetRange: 20
+  minChangeDirectionTime: 2
+  maxChangeDirectionTime: 7
+--- !u!54 &7553517658345727698
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,22 +105,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 88
   m_CollisionDetection: 0
---- !u!114 &555700403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6111029937763819295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59391bc54efedb47b4aeb62dfaecff6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeDirectionTime: 5
-  randomTargetRange: 20
 --- !u!1001 &4355325346453493553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,7 +184,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6b03b4232ef9249429c144a86a50028a, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 0e998b17dc03f56449734d8eed441150, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0e998b17dc03f56449734d8eed441150, type: 3}
 --- !u!4 &4322189205705912538 stripped
 Transform:

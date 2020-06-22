@@ -4,11 +4,16 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Mover : MonoBehaviour
 {
-    [SerializeField] float changeDirectionTime = 5f;
-    [SerializeField] float randomTargetRange = 20f;
+    [SerializeField] float maxRandomTargetRange = 20f;
+    [SerializeField] float minChangeDirectionTime = 2f;
+    [SerializeField] float maxChangeDirectionTime = 7f;
 
     NavMeshAgent navMeshAgent = null;
-    float timer = 0f;
+
+    float waitTimer = 0f;
+    float waitTime;
+
+    bool hasReachedDestination = false;
 
     private void Awake() 
     {
@@ -17,37 +22,59 @@ public class Mover : MonoBehaviour
 
     private void Start() 
     {
+        waitTime = minChangeDirectionTime;
         ChangeTarget();
     }
 
     void Update()
     {
-        UpdateTimer();
+        float distanceFromDestination;
+        distanceFromDestination = Vector3.Distance(transform.position, navMeshAgent.destination);
 
-        if (timer > changeDirectionTime)
+        if (distanceFromDestination < 0.1f && !hasReachedDestination)
+        {
+            waitTime = Random.Range(minChangeDirectionTime, maxChangeDirectionTime);
+            hasReachedDestination = true;
+        }
+        if (distanceFromDestination < 0.1f)
+        {
+            UpdateTimer();
+        }
+
+        if (waitTimer > waitTime)
         {
             ChangeTarget();
-            timer = 0f;
+            hasReachedDestination = false;
+            waitTimer = 0f;
         }
     }
 
     private void ChangeTarget()
     {
-        float randomX = Random.Range(transform.position.x - randomTargetRange, transform.position.x + randomTargetRange);
-        float randomZ = Random.Range(transform.position.z - randomTargetRange, transform.position.z + randomTargetRange);
+        float randomX = Random.Range(
+            transform.position.x - maxRandomTargetRange, 
+            transform.position.x + maxRandomTargetRange
+        );
+        float randomZ = Random.Range(
+            transform.position.z - maxRandomTargetRange, 
+            transform.position.z + maxRandomTargetRange
+        );
         
-        Vector3 newPosition = new Vector3(randomX, transform.position.y, randomZ);
+        Vector3 newRandomPosition = new Vector3(randomX, transform.position.y, randomZ);
 
         NavMeshHit hit;
-        if (!NavMesh.SamplePosition(newPosition, out hit, 4f, NavMesh.AllAreas)) 
+        if (!NavMesh.SamplePosition(newRandomPosition, out hit, 4f, NavMesh.AllAreas)) 
         {
-            NavMesh.SamplePosition(newPosition, out hit, randomTargetRange + 4f, NavMesh.AllAreas);  
+            if (!NavMesh.SamplePosition(newRandomPosition, out hit, maxRandomTargetRange + 4f, NavMesh.AllAreas))
+            {
+                print(gameObject.name + "Path not found");
+            }
         }
         navMeshAgent.destination = hit.position;
     }
 
     private void UpdateTimer() 
     {
-        timer += Time.deltaTime;
+        waitTimer += Time.deltaTime;
     }
 }
