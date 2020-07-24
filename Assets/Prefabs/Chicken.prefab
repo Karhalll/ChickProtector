@@ -84,12 +84,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6111029937763819295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59391bc54efedb47b4aeb62dfaecff6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e027f86ec45acc428b9d4b5d30f04b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRandomTargetRange: 20
-  minChangeDirectionTime: 2
-  maxChangeDirectionTime: 7
+  maxRange: 20
+  minTime: 2
+  maxTime: 7
 --- !u!1001 &4355325346453493553
 PrefabInstance:
   m_ObjectHideFlags: 0
