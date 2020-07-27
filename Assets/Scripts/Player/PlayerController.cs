@@ -25,7 +25,7 @@ namespace ChickProtector.Player
             {
                 Vector3 inputDirection = new Vector3(-Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
 
-                transform.LookAt(transform.position + inputDirection);
+                transform.LookAt(transform.position + inputDirection.normalized);
                 navMeshAgent.Move(transform.forward * Time.deltaTime * moveSpeed);
             }
         }

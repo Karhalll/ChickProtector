@@ -15,6 +15,7 @@ namespace ChickProtector.Chicks
         {
             this.chick = chick;
             chick.transform.position = transform.position;
+            chick.transform.rotation = transform.rotation;
             chick.transform.parent = transform;
         }
 
