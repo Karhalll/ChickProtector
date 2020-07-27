@@ -8,7 +8,7 @@ namespace ChickProtector.Chicks
 
         public void ReleaseChick(float releaseForce)
         {
-            chick.transform.parent = chick.transform;
+            chick.transform.parent = null;
             chick.Kick(releaseForce);
             chick = null;
         }

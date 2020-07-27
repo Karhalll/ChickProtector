@@ -21,11 +21,19 @@ namespace ChickProtector.Chicks
             isKicked = true;
         }
 
+        public void Stationed(Transform parent)
+        {
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<Wanderer>().enabled = false;
+            transform.parent = parent;
+            transform.position = parent.position;
+            transform.rotation = parent.rotation;
+        }
+
         private void OnTriggerEnter(Collider other) 
         {
             if (isKicked && other.tag == "Ground")
             {
-                Destroy(GetComponent<BoxCollider>());
                 Destroy(GetComponent<Rigidbody>());
 
                 GetComponent<NavMeshAgent>().enabled = true;

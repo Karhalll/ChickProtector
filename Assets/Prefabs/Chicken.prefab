@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 555700403}
   m_Layer: 0
   m_Name: Chicken
-  m_TagString: Untagged
+  m_TagString: Chick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.6
-  m_BaseOffset: -0.09
+  m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &3498435923843994544
@@ -88,8 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6955899781194893926ce4b64a25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canKick: 0
-  kickForce: 200
 --- !u!114 &555700403
 MonoBehaviour:
   m_ObjectHideFlags: 0

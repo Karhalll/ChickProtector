@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
+using ChickProtector.Chicks;
+
 namespace ChickProtector.Player
 {
     public class PlayerController : MonoBehaviour
@@ -8,10 +10,12 @@ namespace ChickProtector.Player
         [SerializeField] float moveSpeed = 10f;
 
         NavMeshAgent navMeshAgent;
+        ChickPicker chickPicker;
 
         void Awake() 
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
+            chickPicker = GetComponent<ChickPicker>();
         }
 
         void Start() 
@@ -27,6 +31,11 @@ namespace ChickProtector.Player
 
                 transform.LookAt(transform.position + inputDirection.normalized);
                 navMeshAgent.Move(transform.forward * Time.deltaTime * moveSpeed);
+            }
+
+            if (Input.GetButtonDown("Interact"))
+            {
+                chickPicker.PickChick();
             }
         }
     }
