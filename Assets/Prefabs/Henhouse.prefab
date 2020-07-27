@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3064517019418368902}
   - component: {fileID: 5077470343943374609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3064517019418368902
 Transform:
@@ -53,12 +53,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9117476875541720658}
   - component: {fileID: 3084833877019017903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Henhouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9117476875541720658
 Transform:
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6ca5e1ae4bab842a6b5351b5de77d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chicksAtStart: 3
+  chicksAtStart: 4
   chickPrefab: {fileID: 3498435923843994544, guid: c61562896d27afc4488842cfa8f71d5a,
     type: 3}
   chickSlots: {fileID: 5266353659734449735}
@@ -102,12 +102,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3875326560779903626}
   - component: {fileID: 2746291681017179151}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3875326560779903626
 Transform:
@@ -147,12 +147,12 @@ GameObject:
   - component: {fileID: 1426388024444964676}
   - component: {fileID: 1426388024444964679}
   - component: {fileID: 1426388024444964678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HenhouseModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1426388024444964677
 Transform:
@@ -240,12 +240,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7539246210605823778}
   - component: {fileID: 286126798538229881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7539246210605823778
 Transform:
@@ -282,12 +282,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5266353659734449735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChickSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5266353659734449735
 Transform:
@@ -319,12 +319,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5245547179987281310}
   - component: {fileID: 8713437828414270365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5245547179987281310
 Transform:
@@ -362,12 +362,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2286288287153860397}
   - component: {fileID: 1718815001082274593}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2286288287153860397
 Transform:
@@ -405,12 +405,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6175988394599760017}
   - component: {fileID: 8573440054580166735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6175988394599760017
 Transform:
