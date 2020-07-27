@@ -1,24 +1,56 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+
+using UnityEngine;
 
 public class Henhouse : MonoBehaviour
 {
-    [SerializeField] Transform chickSpots = null;
+    [SerializeField] int chicksAtStart = 3;
+    [SerializeField] Chick chickPrefab = null;
+    [SerializeField] Transform chickSlots = null;
 
-    ChickSpot[] spots;
-    float releaseTimer;
+    ChickSlot[] slots;
 
     void Start()
     {
-        GetSpots();
+        GetSlots();
+        RandomlyFillSlots(chicksAtStart);
     }
 
-    void Update()
+    void GetSlots()
     {
-        
+        slots = chickSlots.GetComponentsInChildren<ChickSlot>();
     }
 
-    void GetSpots()
+    void RandomlyFillSlots(int numberOfSpots)
     {
-        spots = chickSpots.GetComponentsInChildren<ChickSpot>();
+        List<ChickSlot> emptySlots = GetEmptySlots();
+
+        if (numberOfSpots > emptySlots.Count)
+        {
+            Debug.LogWarning("More chicks to fill then empty spots in " + gameObject.name);
+            numberOfSpots = emptySlots.Count;
+            // TODO deal with overfloating chicks
+        }
+
+        for (int i = 0; i < numberOfSpots; i++) 
+        {
+            ChickSlot randomSlot = emptySlots[Random.Range(0, emptySlots.Count)];
+
+            randomSlot.DockChick(Instantiate(chickPrefab));
+            emptySlots.Remove(randomSlot);
+        }
+    }
+
+    List<ChickSlot> GetEmptySlots()
+    {
+        List<ChickSlot> emptySlots = new List<ChickSlot>();
+        foreach (ChickSlot slot in slots)
+        {
+            if (slot.GetChick() == null)
+            {
+                emptySlots.Add(slot);
+            }
+        }
+        return emptySlots;
     }
 }
