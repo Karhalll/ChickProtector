@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6111029937763819265}
   - component: {fileID: 1693617005735690594}
   - component: {fileID: 6111029937763819294}
-  - component: {fileID: 555700403}
   - component: {fileID: 3498435923843994544}
+  - component: {fileID: 555700403}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -76,21 +76,6 @@ NavMeshAgent:
   m_BaseOffset: -0.09
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &555700403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6111029937763819295}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e027f86ec45acc428b9d4b5d30f04b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRange: 20
-  minTime: 2
-  maxTime: 7
 --- !u!114 &3498435923843994544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,9 +85,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 6111029937763819295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 447130bcac7972a4299616d1f83ba40d, type: 3}
+  m_Script: {fileID: 11500000, guid: 66b6955899781194893926ce4b64a25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &555700403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111029937763819295}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21882d5487d2804696fa2f4f38e0d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRange: 20
+  minTime: 2
+  maxTime: 7
 --- !u!1001 &4355325346453493553
 PrefabInstance:
   m_ObjectHideFlags: 0
