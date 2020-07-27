@@ -1,29 +1,38 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
+
+using ChickProtector.Utils;
 
 namespace ChickProtector.Chicks
 {
     public class Chick : MonoBehaviour
     {
-        [SerializeField] bool canKick = false;
-        [SerializeField] float kickForce = 200f;
- 
-        void Update() 
-        {
-            if (canKick)
-            {
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    Kick(kickForce);
-                }
-            }
-        }
+        bool isKicked = false;
 
         public void Kick(float force)
         {
             Rigidbody rigidbody = gameObject.AddComponent(typeof(Rigidbody)) as Rigidbody;
+            BoxCollider boxCollider = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
+
+            boxCollider.center = new Vector3(0f, 0.5f, 0f);
+            boxCollider.isTrigger = true;
             rigidbody.AddForce((transform.forward + transform.up) * force);
 
-            // TODO make chick to stap at ground
+            isKicked = true;
+        }
+
+        private void OnTriggerEnter(Collider other) 
+        {
+            if (isKicked && other.tag == "Ground")
+            {
+                Destroy(GetComponent<BoxCollider>());
+                Destroy(GetComponent<Rigidbody>());
+
+                GetComponent<NavMeshAgent>().enabled = true;
+                GetComponent<Wanderer>().enabled = true;
+                
+                isKicked = false;
+            }
         }
     }
 }

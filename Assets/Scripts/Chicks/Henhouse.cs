@@ -43,7 +43,13 @@ namespace ChickProtector.Chicks
             }
         }
 
-        List<ChickSlot> GetEmptySlots()
+        public ChickSlot GetRandomSlot()
+        {
+            List<ChickSlot> filledSlots = GetFilledSlots();
+            return filledSlots[Random.Range(0, filledSlots.Count)];
+        }
+
+        public List<ChickSlot> GetEmptySlots()
         {
             List<ChickSlot> emptySlots = new List<ChickSlot>();
             foreach (ChickSlot slot in slots)
@@ -54,6 +60,24 @@ namespace ChickProtector.Chicks
                 }
             }
             return emptySlots;
+        }
+
+        public List<ChickSlot> GetFilledSlots()
+        {
+            List<ChickSlot> filledSlots = new List<ChickSlot>();
+            foreach (ChickSlot slot in slots)
+            {
+                if (slot.GetChick() != null)
+                {
+                    filledSlots.Add(slot);
+                }
+            }
+            return filledSlots;
+        }
+
+        public bool isEmpty()
+        {
+            return GetFilledSlots().Count == 0 ? true : false;
         }
     }
 }

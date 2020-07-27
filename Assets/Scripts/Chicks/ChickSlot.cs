@@ -6,9 +6,11 @@ namespace ChickProtector.Chicks
     {
         Chick chick;
 
-        public void ReleaseChick()
+        public void ReleaseChick(float releaseForce)
         {
-
+            chick.transform.parent = chick.transform;
+            chick.Kick(releaseForce);
+            chick = null;
         }
 
         public void DockChick(Chick chick)
