@@ -982,7 +982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7eefbbfa4d3cfb46894f91547514d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabDistance: 2
+  grabDistance: 4
+  box: {x: 6, y: 6.5, z: 0.1}
   slot: {fileID: 1516928007}
 --- !u!1001 &1426388024488471802
 PrefabInstance:
