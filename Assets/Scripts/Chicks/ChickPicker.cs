@@ -13,7 +13,7 @@ namespace ChickProtector.Chicks
         {
             RaycastHit hit;
             bool hitDetect = Physics.BoxCast(transform.position, box/2, transform.forward, out hit, transform.rotation, grabDistance);
-            if (hitDetect) print(hit.transform.gameObject.name);
+            
             if (hitDetect && hit.transform.tag == "Chick")
             {
                 hit.transform.GetComponent<Chick>().Stationed(slot);

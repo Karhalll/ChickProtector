@@ -16,6 +16,7 @@ namespace ChickProtector.Chicks
 
             boxCollider.center = new Vector3(0f, 0.5f, 0f);
             boxCollider.isTrigger = true;
+            
             rigidbody.AddForce((transform.forward + transform.up) * force);
 
             isKicked = true;
@@ -25,6 +26,10 @@ namespace ChickProtector.Chicks
         {
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Wanderer>().enabled = false;
+            
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<BoxCollider>());
+
             transform.parent = parent;
             transform.position = parent.position;
             transform.rotation = parent.rotation;
